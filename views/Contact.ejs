@@ -1,0 +1,54 @@
+<!-- <%-include partials/header.ejs%>
+<%-include partials/main_nav.ejs%>
+  
+
+  
+  <h1><%= title %></h1>
+   <p>Welcome to <%= title %></p>
+<p>Contact us using the following details: <br><b>Phone Number:222-3456-7865. <br>Email:ddf@yahoo.com.</b></p>
+
+   <%-include partials/bottom_nav.ejs%>
+<%-include partials/footer.ejs%>   
+ -->
+
+<%-include partials/header.ejs%>
+<%-include partials/main_nav.ejs%>
+ <!DOCTYPE html>
+
+<html lang="en">
+
+  <!-- <head>
+
+    <title>Contact Form</title>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  </head> -->
+
+  <body class="bg-secondary">
+   <div class="container" style="margin-top: 10px;text-align: center; border: 2px solid;">
+      <div class="row">
+   <h1 class="text-white"><%= title %></h1>
+   <p class="text-white"><br><b>Linkedin: www.linkedin.com/in/emrekemalyurderi/ <br>Email: eyurderi@my.centennialcollege.ca</b></p>
+
+   </div></div>
+
+   <div class="container" style="margin-top: 20px; margin-left: 70px; text-align: center;">
+   <form action="/addmessage" method="post" style="margin-top: 20px; margin-left: 50px;">
+      <div class="input-group" style="margin-left:30px">
+      <label class="text-white text-wrap">Enter your info and message: </label>
+      <input class = "input-group-text"type="text" name="firstName" placeholder="Enter your name..." required>
+      <input class = "input-group-text"type="email" name="email" placeholder="Enter your email..." required>
+      <input class = "input-group-text"type="text" name="message" placeholder="Enter your message..." required>
+      <input class="btn btn-primary" type="submit" value="Send">
+   </div> 
+   </form>
+   </div>
+</body>    
+
+<%-include partials/bottom_nav.ejs%>
+<%-include partials/footer.ejs%> 
