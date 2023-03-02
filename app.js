@@ -22,8 +22,14 @@ let localStrategy = passportLocal.Strategy;
 // async function main() {
 //   await mongoose.connect(mongoDB);
 // }
+let db=require('./db');
+mongoose.connect(db.URI);
+let mongoDB = mongoose.connection;
+mongoDB.on('error',console.error.bind(console,'connection Error:'));
+mongoDB.once('open',()=>{
+  console.log('connected to MongoDB...');
+})
 
-mongoose.connect('mongodb://localhost/emreyurderiassignment', { useNewUrlParser: true });
 
 //MongoDB database Schema template
 var messageSchema = new mongoose.Schema({
@@ -36,7 +42,7 @@ var messageSchema = new mongoose.Schema({
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-//let userListRouter = require('./routes/userList');
+let userListRouter = require('./routes/userList');
 
 var app = express();
 
@@ -103,7 +109,7 @@ app.use("/addmessage", (req, res) => {
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-//app.use('/userList',userListRouter);
+app.use('/userList',userListRouter);
 
 //add contact information to mongoose. If successful send a message, if not successful send an error
 // app.post("/addname", (req, res) => {

@@ -24,12 +24,10 @@ router.get('/add',requireAuth,userController.displayAddPage);
 /*POST Route for processing the Add page - CREATE operation*/
 router.post('/add',requireAuth,userController.processAddPage);
 
-
-
 /*GET Route for displaying the Edit page - UPDATE operation*/
-router.get('/edit/:id',requireAuth,userController.displayEditPage);
+router.get('/:id',requireAuth,userController.displayEditPage);
 /*POST Route for processing the Edit page - UPDATE operation*/
-router.post('/edit/:id',requireAuth,userController.processEditPage);
+router.post('/:id',requireAuth,userController.processEditPage);
 /*GET to perform Deletion - DELETE operation*/
 router.get('/delete/:id',requireAuth,userController.performDelete);
 module.exports = router;

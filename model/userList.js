@@ -1,15 +1,15 @@
 var mongoose = require("mongoose");
-var mongodb = require('mongodb');
+//var mongodb = require('mongodb');
 
 var userList = new mongoose.Schema({
-    "username": String,
+    "contactName": String,
     "email": String,
-    "password":String
+    "contactNumber":String
    },
 
 {
     collection:"userListTable"
 });
 
-module.exports = mongoose.model('user',userList);
+module.exports = mongoose.model('userList',userList);
 

@@ -8,44 +8,30 @@
         <h1><%= title %></h1>
         <form class = "form" method="POST">
                 <div class ="form group">
-                    <label for="nameTextField">Book Title</label>
+                    <label for="contactNameTextField">Contact Name</label>
                     <input type="text" class="form control"
-                    id="nameTextField"
+                    id="contactNameTextField"
                     placeholder="Enter the Book Title"
-                    name="name" required>
+                    name="contactName" required>
                 </div>
 
                 <div class ="form group">
-                    <label for="authorTextField">Author</label>
+                    <label for="emailTextField">Email</label>
                     <input type="text" class="form control"
-                    id="authorTextField"
+                    id="emailTextField"
                     placeholder="Enter the Book's Author"
-                    name="author" required>
+                    name="email" required>
                 </div>
 
                 <div class ="form group">
-                    <label for="publishedTextField">Year</label>
+                    <label for="contactNumberTextField">Year</label>
                     <input type="text" class="form control"
-                    id="publishedTextField"
+                    id="contactNumberTextField"
                     placeholder="Enter the year of Publication"
-                    name="published" required>
+                    name="contactNumber" required>
                 </div>
 
-                <div class ="form group">
-                    <label for="descriptionTextArea">Description</label>
-                    <textarea type="text" class="form control"
-                    id="descriptionTextArea"
-                    placeholder="Enter a brief description of the book"
-                    name="description" required></textarea>
-                </div>
-
-                <div class ="form group">
-                    <label for="PriceTextField">Price</label>
-                    <input type="number" class="form control"
-                    id="priceTextField"
-                    placeholder="Enter the Book's price"
-                    name="price" required>
-                </div>
+                
                 <button class = "btn btn-primary" type="submit"><i class = "fas fa-edit"></i>submit</button>
                 <a href="/userList" class="btn btn-warning"><i class="fas fa-undo"></i>cancel</a> 
             

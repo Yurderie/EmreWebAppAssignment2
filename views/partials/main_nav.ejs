@@ -34,7 +34,12 @@
             <a class="nav-link active" aria-current="page" href="/products">Products</a>
             <%}%>
           </li>
-
+          <% if (title =="userList"){%>
+            <li class="nav-item">
+              <%} else {%>
+              <a class="nav-link active" aria-current="page" href="/userList"><i class="fas fa-book"></i>User List</a>
+              <%}%>
+            </li>
           <% if (title =="contact"){%>
           <li class="nav-item">
             <%} else {%>

@@ -6,33 +6,37 @@
     <div class="col-md-offset-3 col md-8">
         <h1><%= title %></h1>
         <%if(typeof displayName =='string' && displayName){%>
-        <!-- <a href="/bookList/add" class="btn btn-primary" role="button">
+        <a href="/userList/add" class="btn btn-primary" role="button">
             <i class ="fas fa-plus-circle"></i>Add a Book</a>
             <%}%>
-        <br> -->
+        <br>
         <table class = "table table-bordered table-striped table-hover">
             <tr>
-                <th class="text-content col-2">Title</th>
-                <th class="text-content col-2">Author</th>
-                <th class="text-content col-1">Year</th>
-                <th class="col-6">Description</th>
-                <th class="text-content col-1">Price</th>
+                <th class="text-content col-2">Contact Name</th>
+                <th class="text-content col-2">Email</th>
+                <th class="text-content col-1">Contact Number</th>
                 <%if(typeof displayName =='string' && displayName){%>
                 <th class="text-content col-1"></th>
                 <th class="text-content col-1"></th>
                 <%}%>
                 </tr>
-           <% for(let count = 0; count<uesrList.length; count++){ %>
+           <% UserList.sort((a, b) => a.contactName.localeCompare(b.contactName))
+           for(let count = 0; count<UserList.length; count++){ %>
             <tr>
-                <td class = "text-center col-2"><%=userList[count].firstName%></td>
-                <td class = "text-center col-2"><%=userList[count].email%></td>
-                <td class = "text-center col-1"><%=userList[count].password%></td>
-                <!-- <td class = "col-6"><%=BookList[count].description%></td>
-                <td class = "text-center col-1"><%=BookList[count].price%></td>
-                <%if(typeof displayName =='string' && displayName){%>
-                <td class ="text-center col-1"><a href="/bookList/edit/<%=BookList[count]._id%>" class="btn btn-primary"><i class="fas fa-pencil-alt"></i>Edit</a></td>
-                <td class ="text-center col-1"><a href="/bookList/delete/<%=BookList[count]._id%>" class="btn btn-danger"><i class="fas fa-trash-alt"></i>Delete</a></td>     -->
-            <%}%>
+                <td class = "text-center col-2"><%=UserList[count].contactName%></td>
+                <td class = "text-center col-2"><%=UserList[count].email%></td>
+                <td class = "text-center col-1"><%=UserList[count].contactNumber%></td>
+                <td class="text-center">
+                    <td class ="text-center col-1"><a href="/userList/<%=UserList[count]._id%>" class="btn btn-primary"><i class="fas fa-pencil-alt"></i>Update</a></td>
+                  </td>
+
+                  <td class="text-center">
+                    <td class ="text-center col-1"><a href="/userList/delete/<%=UserList[count]._id%>" class="btn btn-danger"><i class="fas fa-trash-alt"></i>Delete</a></td>
+                  </td>
+
+                <!-- <%if(typeof displayName =='string' && displayName){%>
+                
+            <%}%> -->
             </tr>
                 <%}%>
             </table>
